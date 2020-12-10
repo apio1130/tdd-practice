@@ -20,4 +20,11 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         assertEquals(calculator.minus(5,3), 2);
     }
+
+    @Test
+    @DisplayName("multiply 테스트")
+    void multiply() {
+        Calculator calculator = new Calculator();
+        assertEquals(calculator.multiply(5, 3), 15);
+    }
 }

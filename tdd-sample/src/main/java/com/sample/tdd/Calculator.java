@@ -14,4 +14,11 @@ public class Calculator {
         }
         return minus(x-1, y-1);
     }
+
+    public int multiply(int x, int y) {
+        if (y == 0) {
+            return 0;
+        }
+        return x + multiply(x, y-1);
+    }
 }
