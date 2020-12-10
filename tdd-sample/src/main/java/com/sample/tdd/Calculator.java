@@ -21,4 +21,11 @@ public class Calculator {
         }
         return x + multiply(x, y-1);
     }
+
+    public int divide(int x, int y) {
+        if (y == 0) {
+            return 0;
+        }
+        return x / y;
+    }
 }

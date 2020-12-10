@@ -27,4 +27,13 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         assertEquals(calculator.multiply(5, 3), 15);
     }
+
+    @Test
+    @DisplayName("divide 테스트")
+    void divide() {
+        Calculator calculator = new Calculator();
+        assertEquals(calculator.divide(5, 3), 1);
+    }
+
+
 }
