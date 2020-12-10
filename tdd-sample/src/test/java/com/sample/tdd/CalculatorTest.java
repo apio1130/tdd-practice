@@ -13,4 +13,11 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         assertEquals(calculator.plus(1,2), 3);
     }
+
+    @Test
+    @DisplayName("minus 테스트")
+    void minus() {
+        Calculator calculator = new Calculator();
+        assertEquals(calculator.minus(5,3), 2);
+    }
 }
