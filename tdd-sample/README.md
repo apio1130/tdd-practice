@@ -5,3 +5,4 @@
 1. minus(x, y)
 1. multiply(x, y)
 1. divide(x, y)
+1. fibonacci(x)
