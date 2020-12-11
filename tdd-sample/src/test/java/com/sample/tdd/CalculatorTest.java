@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Calculator JUnit Test")
 class CalculatorTest {
@@ -67,6 +69,15 @@ class CalculatorTest {
 
         assertThat(calculator.fibonacci(0)).isEqualTo(0);
         assertThat(calculator.fibonacci(-1)).isEqualTo(0);
+    }
+
+    @ParameterizedTest
+    @DisplayName("ParameterizedTest")
+    @ValueSource(ints = {1,2,3,4,5})
+    void doubleNumber(int numb) {
+        Calculator calculator = new Calculator();
+        int doubleNumb = numb * 2;
+        assertThat(calculator.multiply(numb, 2)).isEqualTo(doubleNumb);
     }
 
 }
