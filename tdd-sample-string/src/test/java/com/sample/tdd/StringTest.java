@@ -16,7 +16,7 @@ class StringTest {
         @Test
         void splitNormalCase() {
             String text = "1,2";
-            String[] splitText = {"1","2"};
+            String[] splitText = {"1", "2"};
             assertThat(text.split(",")).contains("1");
             assertThat(text.split(",")).contains("2");
             assertThat(text.split(",")).containsExactly(splitText);
@@ -29,6 +29,38 @@ class StringTest {
             assertThat(text.split(",")).contains(text);
             String[] splitText = {"1"};
             assertThat(text.split(",")).containsExactly(splitText);
+        }
+    }
+
+    @DisplayName("요구사항 2")
+    @Nested
+    class Request2 {
+        @DisplayName("substring 테스트")
+        @Test
+        void substringNormalCase() {
+            String text = "(1,2)";
+            String resultText = "1,2";
+            assertThat(text.substring(1, text.length() - 1)).contains(resultText);
+            assertThat(text.substring(1, text.length() - 1)).isEqualTo(resultText);
+        }
+    }
+
+    @DisplayName("요구사항 3")
+    @Nested
+    class Request3 {
+        @DisplayName("chatAt 정상 케이스 테스트")
+        @Test
+        void charAtNormalCase() {
+            String text = "abc";
+            assertThat(text.charAt(0)).isEqualTo('a');
+        }
+
+        @DisplayName("chatAt Exception 발생 케이스 테스트")
+        @Test
+        void charAtStringIndexOutOfBoundsException() {
+            String text = "abc";
+            assertThatThrownBy(() -> text.charAt(100)).isInstanceOf(IndexOutOfBoundsException.class).hasMessageContaining("String index out of range: 100");
+            assertThatExceptionOfType(IndexOutOfBoundsException.class).isThrownBy(() -> text.charAt(10)).withMessageMatching("String index out of range: \\d+");
         }
     }
 
