@@ -14,6 +14,9 @@ plugins {
     id 'application'
 }
 
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
@@ -29,6 +32,12 @@ dependencies {
 
     // Use JUnit Jupiter Engine for testing.
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+
+    // Use JUnit Jupiter Param for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.6.2'
+
+    // Use AssertJ for testing.
+    testImplementation 'org.assertj:assertj-core:3.18.1'
 }
 
 application {
